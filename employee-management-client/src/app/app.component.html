@@ -1,0 +1,28 @@
+<mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="isExpanded = !isExpanded">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="example-app-name">Employee Management</h1>
+</mat-toolbar>
+<mat-sidenav-container color="primary" class="example-container" autosize>
+    <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()"
+        (mouseleave)="mouseleave()">
+        <mat-nav-list>
+            <a mat-list-item routerLink="addEmployee/0">Add Employee</a>            
+        </mat-nav-list>
+        <mat-nav-list>
+            <a mat-list-item routerLink="employees">Employee List</a>
+        </mat-nav-list>
+        <mat-nav-list>
+            <a mat-list-item routerLink="addDepartment">Add Department</a>            
+        </mat-nav-list>
+        <mat-nav-list>
+            <a mat-list-item routerLink="departments">Department List</a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <div class="example-sidenav-content">
+        <router-outlet></router-outlet>
+    </div>
+
+</mat-sidenav-container>
